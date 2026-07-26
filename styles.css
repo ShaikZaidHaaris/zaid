@@ -191,12 +191,13 @@
         text-underline-offset: 3px;
       }
 
+      /* portrait-card-bg-fix */
       .portrait-card {
         justify-self: end;
         width: min(100%, 340px);
         padding: 1rem;
         border-radius: 28px;
-        background: var(--surface);
+        background: rgba(255, 255, 255, 0.94);
         box-shadow: var(--shadow);
         border: 1px solid rgba(215, 222, 231, 0.95);
       }
@@ -451,6 +452,70 @@
         flex-wrap: wrap;
         padding-top: 1.25rem;
         border-top: 1px solid var(--line);
+      }
+
+
+      /* Atmospheric backgrounds */
+      .hero {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background-image:
+          linear-gradient(
+            105deg,
+            rgba(248, 250, 252, 0.96) 0%,
+            rgba(248, 250, 252, 0.88) 42%,
+            rgba(248, 250, 252, 0.55) 72%,
+            rgba(248, 250, 252, 0.35) 100%
+          ),
+          url("./assets/bg-robot.jpg");
+        background-size: cover;
+        background-position: 70% center;
+        opacity: 0.4;
+      }
+
+      .hero .wrap {
+        position: relative;
+        z-index: 1;
+      }
+
+      .section.has-bg {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section.has-bg > .section-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background-image:
+          linear-gradient(
+            180deg,
+            rgba(245, 247, 250, 0.94) 0%,
+            rgba(245, 247, 250, 0.9) 40%,
+            rgba(245, 247, 250, 0.92) 100%
+          ),
+          url("./assets/bg-hud.jpg");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.28;
+      }
+
+      .section.has-bg > .wrap {
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-card {
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(8px);
       }
 
       @media (max-width: 900px) {
