@@ -6,26 +6,21 @@
     <title>Shaik Zaid Haaris</title>
     <meta
       name="description"
-      content="Shaik Zaid Haaris — Entrepreneur in Residence at Entrepreneurs First. Founder of Xenova Dynamics. Computer vision, robotics, and defense tech."
+      content="Shaik Zaid Haaris — Entrepreneur in Residence at Entrepreneurs First. Founder of Xenova Dynamics."
     />
     <meta property="og:title" content="Shaik Zaid Haaris" />
-    <meta
-      property="og:description"
-      content="Building perception systems for real-world security."
-    />
     <meta
       property="og:image"
       content="https://shaikzaidhaaris.github.io/zaid/assets/profile.jpg"
     />
+    <base href="/zaid/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
     <style>
-      /* Critical styles inlined so the site never renders as bare HTML */
       :root {
         --bg: #f5f7fa;
         --surface: #ffffff;
@@ -34,8 +29,7 @@
         --line: #d7dee7;
         --accent: #173b63;
         --accent-soft: #e7eef7;
-        --shadow: 0 12px 40px rgba(18, 20, 26, 0.08);
-        --radius: 18px;
+        --shadow: 0 14px 40px rgba(18, 20, 26, 0.1);
         --max: 1080px;
         --font: "Plus Jakarta Sans", "Segoe UI", sans-serif;
         --display: "Fraunces", Georgia, serif;
@@ -53,9 +47,7 @@
         margin: 0;
         font-family: var(--font);
         color: var(--ink);
-        background:
-          radial-gradient(circle at top right, #dce7f2 0%, transparent 40%),
-          linear-gradient(180deg, #f8fafc 0%, var(--bg) 45%, #eef2f6 100%);
+        background: linear-gradient(180deg, #f8fafc 0%, var(--bg) 40%, #eef2f6 100%);
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
       }
@@ -80,7 +72,7 @@
         top: 0;
         z-index: 50;
         backdrop-filter: blur(14px);
-        background: rgba(245, 247, 250, 0.86);
+        background: rgba(245, 247, 250, 0.9);
         border-bottom: 1px solid transparent;
       }
 
@@ -114,13 +106,13 @@
       }
 
       .hero {
-        padding: 4.5rem 0 4rem;
+        padding: 3.5rem 0 3rem;
       }
 
       .hero-grid {
         display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 3rem;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 2.5rem;
         align-items: center;
       }
 
@@ -148,7 +140,7 @@
       .hero h1 {
         margin: 0 0 1rem;
         font-family: var(--display);
-        font-size: clamp(2.6rem, 5vw, 4rem);
+        font-size: clamp(2.5rem, 5vw, 3.8rem);
         line-height: 1.08;
         letter-spacing: -0.03em;
       }
@@ -157,14 +149,14 @@
         margin: 0 0 1.75rem;
         max-width: 34rem;
         color: var(--muted);
-        font-size: 1.125rem;
+        font-size: 1.1rem;
       }
 
       .hero-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 0.75rem;
-        margin-bottom: 1.75rem;
+        margin-bottom: 1.5rem;
       }
 
       .btn {
@@ -204,7 +196,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: 0.9rem 1.25rem;
-        color: var(--muted);
         font-size: 0.92rem;
         font-weight: 600;
       }
@@ -218,50 +209,57 @@
         text-underline-offset: 3px;
       }
 
-      /* portrait-card-bg-fix */
-      .portrait-card {
-        justify-self: end;
-        width: min(100%, 340px);
-        padding: 1rem;
-        border-radius: 28px;
-        background: rgba(255, 255, 255, 0.94);
+      /* Visible media panel — not a washed-out background */
+      .hero-visual {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
         box-shadow: var(--shadow);
-        border: 1px solid rgba(215, 222, 231, 0.95);
+        border: 1px solid var(--line);
+        background: #0b1220;
+        aspect-ratio: 4 / 3;
       }
 
-      .portrait-card img {
+      .hero-visual .scene {
         width: 100%;
-        aspect-ratio: 1;
+        height: 100%;
         object-fit: cover;
-        border-radius: 20px;
-        background: #e5ebf2;
+        opacity: 0.88;
       }
 
-      .portrait-meta {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        padding: 1rem 0.35rem 0.35rem;
+      .hero-visual .portrait {
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #fff;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        background: #ddd;
       }
 
-      .portrait-meta strong {
-        display: block;
-        font-size: 1rem;
-      }
-
-      .portrait-meta span {
-        color: var(--muted);
-        font-size: 0.88rem;
+      .hero-visual .caption {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        padding: 0.55rem 0.8rem;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.92);
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--ink);
       }
 
       .section {
-        padding: 1.25rem 0 4rem;
+        padding: 1rem 0 3.5rem;
       }
 
       .section-card {
         background: var(--surface);
         border: 1px solid var(--line);
-        border-radius: calc(var(--radius) + 6px);
+        border-radius: 24px;
         box-shadow: var(--shadow);
         padding: clamp(1.5rem, 3vw, 2.25rem);
       }
@@ -271,7 +269,7 @@
         align-items: end;
         justify-content: space-between;
         gap: 1rem;
-        margin-bottom: 1.75rem;
+        margin-bottom: 1.5rem;
       }
 
       .section-head h2 {
@@ -286,6 +284,47 @@
         color: var(--muted);
         max-width: 28rem;
         text-align: right;
+      }
+
+      /* Visible HUD banner */
+      .media-banner {
+        position: relative;
+        margin-bottom: 1.25rem;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: #070b14;
+        min-height: 220px;
+      }
+
+      .media-banner img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        opacity: 0.9;
+      }
+
+      .media-banner .banner-fade {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(7, 11, 20, 0.55) 0%,
+          rgba(7, 11, 20, 0.15) 55%,
+          rgba(7, 11, 20, 0.35) 100%
+        );
+        pointer-events: none;
+      }
+
+      .media-banner .banner-label {
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+        color: #fff;
+        font-size: 0.85rem;
+        font-weight: 650;
+        letter-spacing: 0.02em;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
       }
 
       .about-grid {
@@ -330,10 +369,6 @@
         text-transform: uppercase;
       }
 
-      .fact strong {
-        font-size: 1rem;
-      }
-
       .work-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -345,7 +380,6 @@
         border-radius: 16px;
         background: #f3f6fa;
         border: 1px solid #e1e7ef;
-        min-height: 100%;
       }
 
       .work-item .tag {
@@ -361,7 +395,6 @@
       .work-item h3 {
         margin: 0 0 0.55rem;
         font-size: 1.15rem;
-        letter-spacing: -0.02em;
       }
 
       .work-item p {
@@ -382,11 +415,6 @@
         font-size: 0.92rem;
       }
 
-      .work-item .links a:hover {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
-
       .exp-list {
         list-style: none;
         margin: 0;
@@ -397,7 +425,6 @@
         display: grid;
         grid-template-columns: 1.2fr 1.5fr auto;
         gap: 1rem;
-        align-items: start;
         padding: 1.15rem 0;
         border-top: 1px solid var(--line);
       }
@@ -411,16 +438,11 @@
         font-size: 1rem;
       }
 
-      .exp-list .org {
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.92rem;
-      }
-
+      .exp-list .org,
       .exp-list .desc {
         margin: 0;
         color: var(--muted);
-        font-size: 0.95rem;
+        font-size: 0.92rem;
       }
 
       .exp-list .when {
@@ -449,7 +471,6 @@
 
       .contact-grid a:hover {
         transform: translateY(-2px);
-        border-color: #c5ced9;
         background: #fff;
       }
 
@@ -481,103 +502,11 @@
         border-top: 1px solid var(--line);
       }
 
-
-      /* Atmospheric backgrounds — separate image + wash so images stay visible */
-      .hero {
-        position: relative;
-        overflow: hidden;
-        min-height: 72vh;
-        display: flex;
-        align-items: center;
-      }
-
-      .hero-bg {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      .hero-bg img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: 82% center;
-        opacity: 0.5;
-        filter: saturate(1.08) contrast(1.08);
-      }
-
-      .hero-bg::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          100deg,
-          #f8fafc 0%,
-          rgba(248, 250, 252, 0.88) 28%,
-          rgba(248, 250, 252, 0.35) 58%,
-          rgba(248, 250, 252, 0.08) 100%
-        );
-      }
-
-      .hero .wrap {
-        position: relative;
-        z-index: 1;
-      }
-
-      .section.has-bg {
-        position: relative;
-        overflow: hidden;
-      }
-
-      .section.has-bg > .section-bg {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      .section.has-bg > .section-bg img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        opacity: 0.38;
-        filter: saturate(1.2) contrast(1.12) brightness(1.05);
-      }
-
-      .section.has-bg > .section-bg::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          180deg,
-          rgba(245, 247, 250, 0.55) 0%,
-          rgba(245, 247, 250, 0.45) 50%,
-          rgba(245, 247, 250, 0.58) 100%
-        );
-      }
-
-      .section.has-bg > .wrap {
-        position: relative;
-        z-index: 1;
-      }
-
-      .section-card {
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(10px);
-      }
-
       @media (max-width: 900px) {
         .hero-grid,
         .about-grid,
         .work-grid {
           grid-template-columns: 1fr;
-        }
-
-        .portrait-card {
-          justify-self: start;
-          width: min(100%, 300px);
         }
 
         .section-head {
@@ -608,12 +537,16 @@
           width: min(100% - 1.5rem, var(--max));
         }
 
-        .hero {
-          padding-top: 2.5rem;
-        }
-
         .contact-grid {
           grid-template-columns: 1fr;
+        }
+
+        .media-banner img {
+          height: 180px;
+        }
+
+        .media-banner {
+          min-height: 180px;
         }
       }
     </style>
@@ -633,9 +566,6 @@
 
     <main id="top">
       <section class="hero">
-        <div class="hero-bg" aria-hidden="true">
-          <img src="assets/bg-robot.jpg" alt="" />
-        </div>
         <div class="wrap hero-grid">
           <div>
             <p class="eyebrow">IIT Madras · Chennai</p>
@@ -677,23 +607,22 @@
             </div>
           </div>
 
-          <aside class="portrait-card">
+          <aside class="hero-visual">
             <img
-              src="./assets/profile.jpg"
-              alt="Portrait of Shaik Zaid Haaris"
-              width="400"
-              height="400"
+              class="scene"
+              src="assets/bg-robot.jpg"
+              alt="Humanoid robot assembling furniture"
+              width="1200"
+              height="900"
             />
-            <div class="portrait-meta">
-              <div>
-                <strong>Shaik Zaid Haaris</strong>
-                <span>Founder · Builder</span>
-              </div>
-              <div>
-                <strong>EF</strong>
-                <span>EIR</span>
-              </div>
-            </div>
+            <img
+              class="portrait"
+              src="assets/profile.jpg"
+              alt="Shaik Zaid Haaris"
+              width="96"
+              height="96"
+            />
+            <span class="caption">Robotics · Real-world systems</span>
           </aside>
         </div>
       </section>
@@ -745,16 +674,25 @@
         </div>
       </section>
 
-      <section class="section has-bg" id="work">
-        <div class="section-bg" aria-hidden="true">
-          <img src="assets/bg-hud.jpg" alt="" />
-        </div>
+      <section class="section" id="work">
         <div class="wrap">
           <div class="section-card">
             <div class="section-head">
               <h2>Selected work</h2>
               <p>Projects across vision, sensing, and robotics.</p>
             </div>
+
+            <div class="media-banner">
+              <img
+                src="assets/bg-hud.jpg"
+                alt="Drone tracking HUD visualization"
+                width="1600"
+                height="900"
+              />
+              <div class="banner-fade" aria-hidden="true"></div>
+              <span class="banner-label">Xenova · Visual drone tracking</span>
+            </div>
+
             <div class="work-grid">
               <article class="work-item">
                 <span class="tag">Company</span>
@@ -891,10 +829,7 @@
         </div>
       </section>
 
-      <section class="section has-bg" id="contact">
-        <div class="section-bg" aria-hidden="true">
-          <img src="assets/bg-hud.jpg" alt="" />
-        </div>
+      <section class="section" id="contact">
         <div class="wrap">
           <div class="section-card">
             <div class="section-head">
