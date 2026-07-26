@@ -6,14 +6,13 @@
     <title>Shaik Zaid Haaris</title>
     <meta
       name="description"
-      content="Shaik Zaid Haaris — Entrepreneur in Residence at Entrepreneurs First. Founder of Xenova Dynamics. Computer vision, robotics, and defense tech. IIT Madras."
+      content="Shaik Zaid Haaris — Entrepreneur in Residence at Entrepreneurs First. Founder of Xenova Dynamics. Computer vision, robotics, and defense tech."
     />
     <meta property="og:title" content="Shaik Zaid Haaris" />
     <meta
       property="og:description"
-      content="Building breakthrough tech in computer vision, robotics, and defense. Founder of Xenova Dynamics."
+      content="Building perception systems for real-world security."
     />
-    <meta property="og:type" content="website" />
     <meta
       property="og:image"
       content="https://shaikzaidhaaris.github.io/zaid/assets/profile.jpg"
@@ -21,197 +20,848 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111111'/><text x='50' y='68' text-anchor='middle' font-size='52' font-family='Georgia,serif' fill='%23fff'>Z</text></svg>"
-    />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      /* Critical styles inlined so the site never renders as bare HTML */
+      :root {
+        --bg: #f5f7fa;
+        --surface: #ffffff;
+        --ink: #12141a;
+        --muted: #5a6170;
+        --line: #d7dee7;
+        --accent: #173b63;
+        --accent-soft: #e7eef7;
+        --shadow: 0 12px 40px rgba(18, 20, 26, 0.08);
+        --radius: 18px;
+        --max: 1080px;
+        --font: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+        --display: "Fraunces", Georgia, serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font);
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top right, #dce7f2 0%, transparent 40%),
+          linear-gradient(180deg, #f8fafc 0%, var(--bg) 45%, #eef2f6 100%);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .wrap {
+        width: min(100% - 2.5rem, var(--max));
+        margin-inline: auto;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(14px);
+        background: rgba(245, 247, 250, 0.86);
+        border-bottom: 1px solid transparent;
+      }
+
+      .nav.is-stuck {
+        border-bottom-color: var(--line);
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 72px;
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 1.05rem;
+        letter-spacing: -0.02em;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      .nav-links a:hover {
+        color: var(--ink);
+      }
+
+      .hero {
+        padding: 4.5rem 0 4rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0 0 1rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      .hero h1 {
+        margin: 0 0 1rem;
+        font-family: var(--display);
+        font-size: clamp(2.6rem, 5vw, 4rem);
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+      }
+
+      .hero-lead {
+        margin: 0 0 1.75rem;
+        max-width: 34rem;
+        color: var(--muted);
+        font-size: 1.125rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 1.25rem;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border: 1px solid transparent;
+        transition: 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: #102a48;
+        transform: translateY(-1px);
+      }
+
+      .btn-secondary {
+        background: var(--surface);
+        border-color: var(--line);
+      }
+
+      .btn-secondary:hover {
+        border-color: #c5ced9;
+        transform: translateY(-1px);
+      }
+
+      .social-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem 1.25rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+        font-weight: 600;
+      }
+
+      .social-row a {
+        color: var(--accent);
+      }
+
+      .social-row a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .portrait-card {
+        justify-self: end;
+        width: min(100%, 340px);
+        padding: 1rem;
+        border-radius: 28px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(215, 222, 231, 0.95);
+      }
+
+      .portrait-card img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 20px;
+        background: #e5ebf2;
+      }
+
+      .portrait-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 0.35rem 0.35rem;
+      }
+
+      .portrait-meta strong {
+        display: block;
+        font-size: 1rem;
+      }
+
+      .portrait-meta span {
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .section {
+        padding: 1.25rem 0 4rem;
+      }
+
+      .section-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: calc(var(--radius) + 6px);
+        box-shadow: var(--shadow);
+        padding: clamp(1.5rem, 3vw, 2.25rem);
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(1.7rem, 3vw, 2.2rem);
+        letter-spacing: -0.02em;
+      }
+
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+        max-width: 28rem;
+        text-align: right;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 2rem;
+      }
+
+      .about-grid > p {
+        margin: 0;
+        font-size: 1.05rem;
+        color: #333948;
+        line-height: 1.75;
+      }
+
+      .about-grid a {
+        color: var(--accent);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .facts {
+        display: grid;
+        gap: 0.85rem;
+      }
+
+      .fact {
+        padding: 1rem 1.1rem;
+        border-radius: 14px;
+        background: #f3f6fa;
+        border: 1px solid #e1e7ef;
+      }
+
+      .fact span {
+        display: block;
+        margin-bottom: 0.2rem;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .fact strong {
+        font-size: 1rem;
+      }
+
+      .work-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .work-item {
+        padding: 1.35rem;
+        border-radius: 16px;
+        background: #f3f6fa;
+        border: 1px solid #e1e7ef;
+        min-height: 100%;
+      }
+
+      .work-item .tag {
+        display: inline-block;
+        margin-bottom: 0.7rem;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .work-item h3 {
+        margin: 0 0 0.55rem;
+        font-size: 1.15rem;
+        letter-spacing: -0.02em;
+      }
+
+      .work-item p {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .work-item .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+
+      .work-item .links a {
+        color: var(--accent);
+        font-weight: 650;
+        font-size: 0.92rem;
+      }
+
+      .work-item .links a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .exp-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .exp-list li {
+        display: grid;
+        grid-template-columns: 1.2fr 1.5fr auto;
+        gap: 1rem;
+        align-items: start;
+        padding: 1.15rem 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .exp-list li:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .exp-list h3 {
+        margin: 0 0 0.2rem;
+        font-size: 1rem;
+      }
+
+      .exp-list .org {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .exp-list .desc {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .exp-list .when {
+        color: #7a8290;
+        font-size: 0.85rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.85rem;
+      }
+
+      .contact-grid a {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 1.15rem;
+        border-radius: 14px;
+        background: #f3f6fa;
+        border: 1px solid #e1e7ef;
+        transition: 0.2s ease;
+      }
+
+      .contact-grid a:hover {
+        transform: translateY(-2px);
+        border-color: #c5ced9;
+        background: #fff;
+      }
+
+      .contact-grid span:first-child {
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .contact-grid span:last-child {
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .footer {
+        padding: 1.5rem 0 2.75rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--line);
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .about-grid,
+        .work-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .portrait-card {
+          justify-self: start;
+          width: min(100%, 300px);
+        }
+
+        .section-head {
+          flex-direction: column;
+          align-items: start;
+        }
+
+        .section-head p {
+          text-align: left;
+        }
+
+        .exp-list li {
+          grid-template-columns: 1fr;
+          gap: 0.35rem;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav-links {
+          display: none;
+        }
+
+        .wrap {
+          width: min(100% - 1.5rem, var(--max));
+        }
+
+        .hero {
+          padding-top: 2.5rem;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="page">
-      <header class="site-header">
-        <img
-          class="avatar"
-          src="assets/profile.jpg"
-          alt="Shaik Zaid Haaris"
-          width="96"
-          height="96"
-        />
-        <div class="intro">
-          <h1>Shaik Zaid Haaris</h1>
-          <p class="role">
-            Entrepreneur in Residence at Entrepreneurs First · Founder,
-            Xenova Dynamics
-          </p>
-          <p class="bio">
-            I build perception systems for real-world security — computer
-            vision, robotics, and RF sensing. Based in Chennai. Studying at IIT
-            Madras.
-          </p>
-          <p class="links">
-            <a
-              href="https://www.linkedin.com/in/shaik-zaid-haaris-164457305/"
-              target="_blank"
-              rel="noopener"
-              >LinkedIn</a
-            >
-            <a href="https://x.com/HaarisZaid67026" target="_blank" rel="noopener"
-              >X</a
-            >
-            <a
-              href="https://github.com/ShaikZaidHaaris"
-              target="_blank"
-              rel="noopener"
-              >GitHub</a
-            >
-            <a
-              href="https://xenovadynamics.com"
-              target="_blank"
-              rel="noopener"
-              >Xenova</a
-            >
-          </p>
-        </div>
-      </header>
+    <header class="nav" id="nav">
+      <div class="wrap nav-inner">
+        <a class="logo" href="#top">Zaid Haaris</a>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-      <main>
-        <section>
-          <h2>About</h2>
-          <p>
-            I’m focused on hard perception problems: detecting and tracking
-            drones, shipping open datasets, and turning research into systems
-            that work outside the lab. Currently an Entrepreneur in Residence at
-            <a href="https://www.joinef.com/" target="_blank" rel="noopener"
-              >Entrepreneurs First</a
-            >, and founder of
-            <a href="https://xenovadynamics.com" target="_blank" rel="noopener"
-              >Xenova Dynamics</a
-            >.
-          </p>
-        </section>
-
-        <section>
-          <h2>Work</h2>
-          <ul class="list">
-            <li>
-              <div class="item-top">
-                <h3>Xenova Dynamics</h3>
-                <span>Company</span>
-              </div>
-              <p>
-                Visual drone detection and tracking for contested airspace —
-                synthetic data, ensemble inference, and multi-frame tracking.
-              </p>
+    <main id="top">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <p class="eyebrow">IIT Madras · Chennai</p>
+            <h1>Shaik Zaid Haaris</h1>
+            <p class="hero-lead">
+              Entrepreneur in Residence at Entrepreneurs First and founder of
+              Xenova Dynamics. I build perception systems for real-world
+              security — computer vision, robotics, and RF sensing.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#work">View my work</a>
+              <a class="btn btn-secondary" href="#contact">Get in touch</a>
+            </div>
+            <div class="social-row">
               <a
-                href="https://xenovadynamics.com"
+                href="https://www.linkedin.com/in/shaik-zaid-haaris-164457305/"
                 target="_blank"
                 rel="noopener"
-                >xenovadynamics.com</a
+                >LinkedIn</a
               >
-            </li>
-            <li>
-              <div class="item-top">
-                <h3>Xenova UAV Vision</h3>
-                <span>Dataset</span>
-              </div>
-              <p>
-                Open-source dataset for visual drone detection — 220k images,
-                29.2 GB, with synthetic augmentation for camouflage and clutter.
-              </p>
-              <p class="inline-links">
-                <a
-                  href="https://github.com/ShaikZaidHaaris/Xenova-UAV-Vision"
-                  target="_blank"
-                  rel="noopener"
-                  >GitHub</a
-                >
-                <a
-                  href="https://huggingface.co/datasets/BlackBoxVision/Xenova-UAV-Vision"
-                  target="_blank"
-                  rel="noopener"
-                  >Hugging Face</a
-                >
-              </p>
-            </li>
-            <li>
-              <div class="item-top">
-                <h3>Pluto RF Dataset</h3>
-                <span>RF sensing</span>
-              </div>
-              <p>
-                Drone vs non-drone RF dataset captured on the IIT Madras campus
-                using ADALM-Pluto SDR — 2.8 GB I/Q data.
-              </p>
               <a
-                href="https://github.com/ShaikZaidHaaris/pluto-rf-dataset-iitm"
+                href="https://x.com/HaarisZaid67026"
+                target="_blank"
+                rel="noopener"
+                >X / Twitter</a
+              >
+              <a
+                href="https://github.com/ShaikZaidHaaris"
                 target="_blank"
                 rel="noopener"
                 >GitHub</a
               >
-            </li>
-            <li>
-              <div class="item-top">
-                <h3>Robotic IKEA assembly</h3>
-                <span>Robotics</span>
+              <a
+                href="https://xenovadynamics.com"
+                target="_blank"
+                rel="noopener"
+                >Xenova</a
+              >
+            </div>
+          </div>
+
+          <aside class="portrait-card">
+            <img
+              src="./assets/profile.jpg"
+              alt="Portrait of Shaik Zaid Haaris"
+              width="400"
+              height="400"
+            />
+            <div class="portrait-meta">
+              <div>
+                <strong>Shaik Zaid Haaris</strong>
+                <span>Founder · Builder</span>
               </div>
+              <div>
+                <strong>EF</strong>
+                <span>EIR</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="wrap">
+          <div class="section-card">
+            <div class="section-head">
+              <h2>About</h2>
+              <p>Builder at the intersection of vision, autonomy, and security.</p>
+            </div>
+            <div class="about-grid">
               <p>
-                Data-collection pipeline for robotic furniture assembly —
-                structured training signal from real-world tasks.
+                I work on hard perception problems — detecting and tracking
+                drones, shipping open datasets, and turning research into systems
+                that hold up outside the lab. I’m currently an Entrepreneur in
+                Residence at
+                <a href="https://www.joinef.com/" target="_blank" rel="noopener"
+                  >Entrepreneurs First</a
+                >
+                and the founder of
+                <a
+                  href="https://xenovadynamics.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Xenova Dynamics</a
+                >.
               </p>
-            </li>
-          </ul>
-        </section>
+              <div class="facts">
+                <div class="fact">
+                  <span>Location</span>
+                  <strong>Chennai, India</strong>
+                </div>
+                <div class="fact">
+                  <span>Education</span>
+                  <strong>IIT Madras</strong>
+                </div>
+                <div class="fact">
+                  <span>Focus</span>
+                  <strong>CV · Robotics · RF</strong>
+                </div>
+                <div class="fact">
+                  <span>Open data</span>
+                  <strong>220k+ UAV images</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section>
-          <h2>Experience</h2>
-          <ul class="exp">
-            <li>
-              <div>
-                <h3>Entrepreneur in Residence</h3>
-                <p>Entrepreneurs First</p>
-              </div>
-              <span>Present</span>
-            </li>
-            <li>
-              <div>
-                <h3>Founder</h3>
-                <p>Xenova Dynamics</p>
-              </div>
-              <span>—</span>
-            </li>
-            <li>
-              <div>
-                <h3>Contingent Member</h3>
-                <p>Inter IIT Tech Meet 13.0</p>
-              </div>
-              <span>IIT Madras</span>
-            </li>
-            <li>
-              <div>
-                <h3>Technical Team Member</h3>
-                <p>Team Abhiyaan</p>
-              </div>
-              <span>—</span>
-            </li>
-            <li>
-              <div>
-                <h3>Education Mentor</h3>
-                <p>Tensors</p>
-              </div>
-              <span>—</span>
-            </li>
-          </ul>
-        </section>
-      </main>
+      <section class="section" id="work">
+        <div class="wrap">
+          <div class="section-card">
+            <div class="section-head">
+              <h2>Selected work</h2>
+              <p>Projects across vision, sensing, and robotics.</p>
+            </div>
+            <div class="work-grid">
+              <article class="work-item">
+                <span class="tag">Company</span>
+                <h3>Xenova Dynamics</h3>
+                <p>
+                  Visual drone detection and tracking for contested airspace —
+                  synthetic data, ensemble inference, and multi-frame tracking.
+                </p>
+                <div class="links">
+                  <a
+                    href="https://xenovadynamics.com"
+                    target="_blank"
+                    rel="noopener"
+                    >Visit site →</a
+                  >
+                </div>
+              </article>
 
-      <footer>
-        <p>© <span id="year"></span> Shaik Zaid Haaris · Chennai</p>
-      </footer>
-    </div>
+              <article class="work-item">
+                <span class="tag">Open dataset</span>
+                <h3>Xenova UAV Vision</h3>
+                <p>
+                  Open dataset for visual drone detection — 220k images, 29.2 GB,
+                  with synthetic augmentation for camouflage and clutter.
+                </p>
+                <div class="links">
+                  <a
+                    href="https://github.com/ShaikZaidHaaris/Xenova-UAV-Vision"
+                    target="_blank"
+                    rel="noopener"
+                    >GitHub →</a
+                  >
+                  <a
+                    href="https://huggingface.co/datasets/BlackBoxVision/Xenova-UAV-Vision"
+                    target="_blank"
+                    rel="noopener"
+                    >Hugging Face →</a
+                  >
+                </div>
+              </article>
 
-    <script src="script.js"></script>
+              <article class="work-item">
+                <span class="tag">RF sensing</span>
+                <h3>Pluto RF Dataset</h3>
+                <p>
+                  Drone vs non-drone RF dataset from the IIT Madras campus using
+                  ADALM-Pluto SDR — 2.8 GB I/Q data.
+                </p>
+                <div class="links">
+                  <a
+                    href="https://github.com/ShaikZaidHaaris/pluto-rf-dataset-iitm"
+                    target="_blank"
+                    rel="noopener"
+                    >GitHub →</a
+                  >
+                </div>
+              </article>
+
+              <article class="work-item">
+                <span class="tag">Robotics</span>
+                <h3>Robotic IKEA assembly</h3>
+                <p>
+                  Data-collection pipeline for robotic furniture assembly —
+                  structured training signal from messy real-world tasks.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="wrap">
+          <div class="section-card">
+            <div class="section-head">
+              <h2>Experience</h2>
+              <p>Where I’ve been building and shipping.</p>
+            </div>
+            <ul class="exp-list">
+              <li>
+                <div>
+                  <h3>Entrepreneur in Residence</h3>
+                  <p class="org">Entrepreneurs First</p>
+                </div>
+                <p class="desc">
+                  Building with exceptional talent to form teams and companies.
+                </p>
+                <span class="when">Present</span>
+              </li>
+              <li>
+                <div>
+                  <h3>Founder</h3>
+                  <p class="org">Xenova Dynamics</p>
+                </div>
+                <p class="desc">
+                  Anti-drone vision systems, open datasets, and tracking
+                  pipelines.
+                </p>
+                <span class="when">Founder</span>
+              </li>
+              <li>
+                <div>
+                  <h3>Contingent Member</h3>
+                  <p class="org">Inter IIT Tech Meet 13.0</p>
+                </div>
+                <p class="desc">
+                  Represented IIT Madras at India’s largest inter-IIT tech meet.
+                </p>
+                <span class="when">IIT Madras</span>
+              </li>
+              <li>
+                <div>
+                  <h3>Technical Team Member</h3>
+                  <p class="org">Team Abhiyaan</p>
+                </div>
+                <p class="desc">
+                  Engineering and product work in a competitive student tech
+                  team.
+                </p>
+                <span class="when">Technical</span>
+              </li>
+              <li>
+                <div>
+                  <h3>Education Mentor</h3>
+                  <p class="org">Tensors</p>
+                </div>
+                <p class="desc">
+                  Mentored students through JEE and JoSAA counseling programs.
+                </p>
+                <span class="when">Mentor</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="wrap">
+          <div class="section-card">
+            <div class="section-head">
+              <h2>Contact</h2>
+              <p>
+                Open to collaborators, founders, and teams working on perception
+                and autonomy.
+              </p>
+            </div>
+            <div class="contact-grid">
+              <a
+                href="https://www.linkedin.com/in/shaik-zaid-haaris-164457305/"
+                target="_blank"
+                rel="noopener"
+              >
+                <span>LinkedIn</span>
+                <span>shaik-zaid-haaris</span>
+              </a>
+              <a
+                href="https://x.com/HaarisZaid67026"
+                target="_blank"
+                rel="noopener"
+              >
+                <span>X</span>
+                <span>@HaarisZaid67026</span>
+              </a>
+              <a
+                href="https://github.com/ShaikZaidHaaris"
+                target="_blank"
+                rel="noopener"
+              >
+                <span>GitHub</span>
+                <span>ShaikZaidHaaris</span>
+              </a>
+              <a
+                href="https://xenovadynamics.com"
+                target="_blank"
+                rel="noopener"
+              >
+                <span>Company</span>
+                <span>xenovadynamics.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>© <span id="year">2026</span> Shaik Zaid Haaris</p>
+        <p>Chennai · IIT Madras</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = String(
+        new Date().getFullYear()
+      );
+      const nav = document.getElementById("nav");
+      const onScroll = () =>
+        nav.classList.toggle("is-stuck", window.scrollY > 8);
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+    </script>
   </body>
 </html>
