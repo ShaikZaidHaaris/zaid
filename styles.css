@@ -459,6 +459,9 @@
       .hero {
         position: relative;
         overflow: hidden;
+        min-height: 72vh;
+        display: flex;
+        align-items: center;
       }
 
       .hero-bg {
@@ -472,9 +475,9 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: 78% center;
-        opacity: 0.34;
-        filter: saturate(1.05) contrast(1.05);
+        object-position: 82% center;
+        opacity: 0.5;
+        filter: saturate(1.08) contrast(1.08);
       }
 
       .hero-bg::after {
@@ -484,9 +487,9 @@
         background: linear-gradient(
           100deg,
           #f8fafc 0%,
-          rgba(248, 250, 252, 0.92) 34%,
-          rgba(248, 250, 252, 0.55) 62%,
-          rgba(248, 250, 252, 0.18) 100%
+          rgba(248, 250, 252, 0.88) 28%,
+          rgba(248, 250, 252, 0.35) 58%,
+          rgba(248, 250, 252, 0.08) 100%
         );
       }
 
@@ -512,8 +515,8 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
-        opacity: 0.22;
-        filter: saturate(1.15) contrast(1.1);
+        opacity: 0.38;
+        filter: saturate(1.2) contrast(1.12) brightness(1.05);
       }
 
       .section.has-bg > .section-bg::after {
@@ -522,9 +525,9 @@
         inset: 0;
         background: linear-gradient(
           180deg,
-          rgba(245, 247, 250, 0.72) 0%,
-          rgba(245, 247, 250, 0.62) 50%,
-          rgba(245, 247, 250, 0.75) 100%
+          rgba(245, 247, 250, 0.55) 0%,
+          rgba(245, 247, 250, 0.45) 50%,
+          rgba(245, 247, 250, 0.58) 100%
         );
       }
 
